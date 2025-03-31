@@ -1,4 +1,4 @@
-function initEmailJS(publicKey) {
+async function initEmailJS(publicKey) {
     emailjs.init(publicKey);
 }
 
@@ -17,21 +17,21 @@ function sendEmailForm(formId, serviceID, templateID, successCallback, errorCall
     });
 }
 
-(function() {
-    const publicKey = '6JdbPIt9h7lR-Wo5p';
-    const serviceID = 'service_8w8bgqr';
-    const templateID = 'template_edi2e48';
+async function startApp() {
+    const env = await getEnvVariables();
+
+    if (!env || !env.EMAILJS_PUBLIC_KEY || !env.EMAILJS_SERVICE_ID || !env.EMAILJS_TEMPLATE_ID_CONTACT) {
+        console.error("No se pudieron cargar las variables de entorno.");
+        return;
+    }
+
+    initEmailJS(env.EMAILJS_PUBLIC_KEY);
+
     const formId = 'contactForm';
+    const successCallback = () => alert('Mensaje enviado!');
+    const errorCallback = (err) => alert('Error al enviar el mensaje:', err);
 
-    initEmailJS(publicKey);
+    sendEmailForm(formId, env.EMAILJS_SERVICE_ID, env.EMAILJS_TEMPLATE_ID_CONTACT, successCallback, errorCallback);
+}
 
-    const successCallback = () => {
-        alert('Mensaje enviado!');
-    };
-
-    const errorCallback = (err) => {
-        alert('Error al enviar el mensaje:', err);
-    };
-
-    sendEmailForm(formId, serviceID, templateID, successCallback, errorCallback);
-})();
+startApp();
