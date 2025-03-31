@@ -20,7 +20,7 @@ function sendEmailForm(formId, serviceID, templateID, successCallback, errorCall
 
 async function startApp() {
     try {
-        const response = await fetch('/netlify/functions/get-config');
+        const response = await fetch('/netlify/functions/get-config.js');
         const env = await response.json();
 
         if (!env.publicKey || !env.serviceId || !env.templateIdContact) {
