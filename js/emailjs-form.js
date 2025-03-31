@@ -12,26 +12,32 @@ function sendEmailForm(formId, serviceID, templateID, successCallback, errorCall
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
-        emailjs.sendForm(serviceID, templateID, this)
-            .then(successCallback, errorCallback);
+        emailjs.sendForm(serviceID, templateID, form)
+            .then(successCallback)
+            .catch(errorCallback);
     });
 }
 
 async function startApp() {
-    const env = await getEnvVariables();
+    try {
+        const response = await fetch('/.netlify/functions/get-emailjs-config');
+        const env = await response.json();
 
-    if (!env || !env.EMAILJS_PUBLIC_KEY || !env.EMAILJS_SERVICE_ID || !env.EMAILJS_TEMPLATE_ID_CONTACT) {
-        console.error("No se pudieron cargar las variables de entorno.");
-        return;
+        if (!env.publicKey || !env.serviceId || !env.templateIdContact) {
+            console.error("No se pudieron cargar las variables de entorno.");
+            return;
+        }
+
+        initEmailJS(env.publicKey);
+
+        const formId = 'contactForm';
+        const successCallback = () => alert('Mensaje enviado!');
+        const errorCallback = (err) => alert('Error al enviar el mensaje:', err);
+
+        sendEmailForm(formId, env.serviceId, env.templateIdContact, successCallback, errorCallback);
+    } catch (error) {
+        console.error("Error al cargar la configuración de EmailJS:", error);
     }
-
-    initEmailJS(env.EMAILJS_PUBLIC_KEY);
-
-    const formId = 'contactForm';
-    const successCallback = () => alert('Mensaje enviado!');
-    const errorCallback = (err) => alert('Error al enviar el mensaje:', err);
-
-    sendEmailForm(formId, env.EMAILJS_SERVICE_ID, env.EMAILJS_TEMPLATE_ID_CONTACT, successCallback, errorCallback);
 }
 
 startApp();
