@@ -20,9 +20,8 @@ function sendEmailForm(formId, serviceID, templateID, successCallback, errorCall
 
 async function startApp() {
     try {
-        const response = await fetch('/netlify/functions/get-config.js');
+        const response = await fetch('/.netlify/functions/get-config');
         const env = await response.json();
-
         if (!env.publicKey || !env.serviceId || !env.templateIdContact) {
             console.error("No se pudieron cargar las variables de entorno.");
             return;
