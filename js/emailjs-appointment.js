@@ -31,8 +31,22 @@ async function startApp() {
         initEmailJS(env.publicKey);
 
         const formId = "appointment-form";
-        const successCallback = () => alert("¡Cita agendada con éxito!");
-        const errorCallback = (err) => alert("Error al agendar la cita:", err);
+        const successCallback = () => {
+            Swal.fire({
+                icon: 'success',
+                title: '¡Cita agendada con éxito!',
+                showConfirmButton: false,
+                timer: 2000
+            });
+        };
+    
+        const errorCallback = (err) => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error al agendar la cita',
+                text: err,
+            });
+        };
 
         sendEmailForm(formId, env.serviceId, env.templateIdAppointment, successCallback, errorCallback);
     } catch (error) {
