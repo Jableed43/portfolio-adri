@@ -33,7 +33,6 @@ async function startApp() {
         initEmailJS(env.publicKey);
 
         const formId = "appointment-form";
-        const appointmentForm = sendEmailForm(formId, env.serviceId, env.templateIdAppointment, successCallback, errorCallback);
 
         const successCallback = (formElement) => {
             Swal.fire({
@@ -55,6 +54,8 @@ async function startApp() {
                 text: err,
             });
         };
+
+        const appointmentForm = sendEmailForm(formId, env.serviceId, env.templateIdAppointment, successCallback, errorCallback);
 
         if (!appointmentForm) {
             console.error(`No se pudo adjuntar el listener al formulario con ID '${formId}'.`);
