@@ -37,6 +37,10 @@ async function startApp() {
                 title: '¡Cita agendada con éxito!',
                 showConfirmButton: false,
                 timer: 2000
+            }).then(() => {
+                if (form) {
+                    form.reset();
+                }
             });
         };
     

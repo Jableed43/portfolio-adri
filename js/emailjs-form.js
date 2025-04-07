@@ -30,8 +30,27 @@ async function startApp() {
         initEmailJS(env.publicKey);
 
         const formId = 'contactForm';
-        const successCallback = () => alert('Mensaje enviado!');
-        const errorCallback = (err) => alert('Error al enviar el mensaje:', err);
+
+        const successCallback = () => {
+            Swal.fire({
+                icon: 'success',
+                title: '¡Mensaje enviado!',
+                showConfirmButton: false,
+                timer: 2000
+            }).then(() => {
+                if (form) {
+                    form.reset();
+                }
+            });
+        };
+    
+        const errorCallback = (err) => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error al enviar el mensaje',
+                text: err,
+            });
+        };
 
         sendEmailForm(formId, env.serviceId, env.templateIdContact, successCallback, errorCallback);
     } catch (error) {
