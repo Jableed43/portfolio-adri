@@ -69,4 +69,4 @@ This project is static. If you want to run it locally:
 
 ```bash
 # Clone the repository
-git clone [https://github.com/tuusuario/psicomotricista-site.git](https://github.com/tuusuario/psicomotricista-site.git)
+git clone https://github.com/tuusuario/psicomotricista-site.git
