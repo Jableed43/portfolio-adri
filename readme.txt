@@ -1,93 +1,72 @@
-# 🌐 Sitio Profesional de Psicomotricista
+# 🌐 Professional Website for a Psychomotor Therapist
 
-**Deploy:** [https://psicomotriz.netlify.app/](https://psicomotriz.netlify.app/)  
-Este es un proyecto real desarrollado para un profesional de la psicomotricidad, con el objetivo de contar con una presencia online simple, atractiva y funcional.
+**Deployment:** [https://psicomotriz.netlify.app/](https://psicomotriz.netlify.app/)
 
----
-
-## 🧩 Descripción
-
-El sitio fue diseñado para ser una plataforma informativa y de contacto directo con el profesional. Se enfoca en la presentación clara de servicios, acceso rápido a medios de contacto y un diseño visual cálido y profesional.
+This is a real-world project developed for a psychomotor therapy professional, aiming to establish a simple, attractive, and functional online presence.
 
 ---
 
-## ⚙️ Tecnologías Utilizadas
+## 🧩 Description
 
-- **HTML / CSS / JavaScript:** Sitio estático basado en tecnologías web clásicas.
-- **Template de Colorlib:** Utilizado como base de diseño (template médico adaptado).
-- **EmailJS:** Para enviar correos desde el formulario de contacto sin backend propio.
-- **Netlify:** Deploy y hosting del sitio, además de uso de funciones para proteger variables de entorno.
+The website was designed as an informative platform and a direct contact point for the professional. It focuses on clearly presenting services, providing quick access to contact methods, and featuring a warm and professional visual design.
 
 ---
 
-## 💡 Funcionalidades
+## ⚙️ Technologies Used
 
-- Formulario para **agendar consultas**, que envía directamente un mail al profesional.
-- **Sección "Sobre Mí"** con información detallada y descarga de CV.
-- Imágenes y diseño adaptado a la temática de psicomotricidad, creados con inteligencia artificial.
-- Enlaces a **WhatsApp**, **correo electrónico** e **Instagram** para contacto directo.
-- **Diseño responsive**, accesible desde cualquier dispositivo.
-
----
-
-## 🧠 Desafíos y Soluciones
-
-### 1. Tener un sitio simple y atractivo  
-💡 *Solución:* Usé un template de una clínica médica de [colorlib.com](https://colorlib.com) que adapté al rubro, asegurando una experiencia clara y profesional.
+- **HTML / CSS / JavaScript:** Static website built with classic web technologies.
+- **Colorlib Template:** Used as a design base (adapted medical template).
+- **EmailJS:** For sending emails from the contact form without a dedicated backend.
+- **Netlify:** Deployment and hosting of the site, along with the use of functions to protect environment variables.
 
 ---
 
-### 2. Crear un logo representativo  
-💡 *Solución:* Utilicé IA para generar un logo SVG que represente el enfoque integral de la psicomotricidad, usando una figura corporal con textura de puzzle.
+## 💡 Features
+
+- Form to **schedule appointments**, directly sending an email to the professional.
+- **"About Me" Section** with detailed information and CV download.
+- Images and design adapted to the theme of psychomotricity, created with artificial intelligence.
+- Links to **WhatsApp**, **email**, and **Instagram** for direct contact.
+- **Responsive design**, accessible from any device.
 
 ---
 
-### 3. Representar visualmente la profesión  
-💡 *Solución:* Imágenes generadas con IA, estilo infantil/disney, que transmiten empatía y cercanía, ideales para un público objetivo compuesto por niños y familias.
+## 🧠 Challenges and Solutions
+
+### 1. Creating a Simple and Attractive Site
+💡 *Solution:* I used a medical clinic template from [colorlib.com](https://colorlib.com) and adapted it to the specific field, ensuring a clear and professional user experience.
 
 ---
 
-### 4. Canal de comunicación efectivo  
-💡 *Solución:* Integración de WhatsApp, mail, Instagram, y formulario con EmailJS que envía directamente al profesional. Todo accesible desde el header, sección de contacto y footer.
+### 2. Designing a Representative Logo
+💡 *Solution:* I utilized AI to generate an SVG logo that represents the holistic approach of psychomotricity, using a body figure with a puzzle texture.
 
 ---
 
-### 5. Presentar trayectoria profesional  
-💡 *Solución:* Información visible en la home y en la sección "Sobre Mí", con descarga de CV y detalle de experiencia en distintas instituciones.
+### 3. Visually Representing the Profession
+💡 *Solution:* Images generated with AI, in a childlike/Disney style, conveying empathy and approachability, ideal for the target audience of children and families.
 
 ---
 
-### 6. Mailing y hosting sin backend  
-💡 *Solución:* Uso de **Netlify Functions** para proteger variables de entorno de EmailJS sin exponerlas en el código, manteniendo seguridad sin necesidad de Node.js.
+### 4. Effective Communication Channel
+💡 *Solution:* Integration of WhatsApp, email, Instagram, and a form using EmailJS that sends directly to the professional. All accessible from the header, contact section, and footer.
 
 ---
 
-## 📦 Instalación (opcional para otros desarrolladores)
+### 5. Presenting Professional Experience
+💡 *Solution:* Information visible on the homepage and in the "About Me" section, with a downloadable CV and details of experience in various institutions.
 
-Este proyecto es estático. Si querés ejecutarlo localmente:
+---
+
+### 6. Mailing and Hosting Without a Backend
+💡 *Solution:* Use of **Netlify Functions** to protect EmailJS environment variables without exposing them in the code, maintaining security without the need for Node.js.
+
+---
+
+## 📦 Installation (optional for other developers)
+
+This project is static. If you want to run it locally:
 
 ```bash
-# Clonar el repositorio
-git clone https://github.com/tuusuario/psicomotricista-site.git
-
-# Abrir index.html en tu navegador
-```
-
----
-
-## 📬 Contacto del Profesional
-
-Encontralo en el sitio web en la sección de contacto, donde podrás:  
-✅ Agendar consulta  
-✅ Enviar mensaje directo por WhatsApp  
-✅ Acceder a su Instagram profesional  
-✅ Ver ubicación y enviar emails
-
----
-
-## 📁 Créditos
-
-- Template base: [Colorlib](https://colorlib.com)
-- Logo e imágenes: Generadas con inteligencia artificial
-- Hosting: [Netlify](https://netlify.com)
-- Mailing: [EmailJS](https://www.emailjs.com/)
+# Clone the repository
+git clone [https://github.com/tuusuario/psicomotricista-site.git](https://github.com/tuusuario/psicomotricista-site.git)
